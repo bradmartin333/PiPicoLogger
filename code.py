@@ -1,6 +1,7 @@
 import select
 import sys
 import time
+import microcontroller
 
 # Set up the poll object
 poll_obj = select.poll()
@@ -15,7 +16,7 @@ while True:
         # Read the data from stdin (read data coming from PC)
         data = sys.stdin.readline().strip()
         # Write the data to the input file (print sends data back over USB to the PC)
-        print("received data: ", data)
+        print("MCU Temp: ", microcontroller.cpu.temperature)
     else:
         # do something if no message received (like feed a watchdog timer)
         continue
