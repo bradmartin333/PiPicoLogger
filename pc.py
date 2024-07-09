@@ -30,7 +30,7 @@ s.flush()
 
 while True:
     # Send a message to the Pico
-    s.write("data\n".encode())
+    s.write("data\r\n".encode())
     # Read the response from the Pico
     mes = s.read_until()
     # Decode the response and remove newline
